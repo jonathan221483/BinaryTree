@@ -94,4 +94,18 @@ public class MyHashTable<K,V> {
         }
         return null;
     }
+    public int[] sizeOfBuckets(){
+        int[] result = new int[chain_number];
+        for (int i = 0; i < chain_number; i ++){
+            int length = 0;
+            HashNode<K, V> pointer = chainArray[i];
+            while (pointer != null){
+                pointer = pointer.next;
+                length ++;
+            }
+            result[i] = length;
+        }
+        return result;
+    }
+
 }

@@ -11,7 +11,7 @@ public class Main {
             hashTable.put(new Book(gen.NameGen(), gen.IDGen(), gen.CostGen()),
                     gen.NameGen());
         }
-
+        System.out.println("Number of elements in each bucket " + Arrays.toString(hashTable.sizeOfBuckets()));
 
 
     }
