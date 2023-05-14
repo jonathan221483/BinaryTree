@@ -1,5 +1,19 @@
 public class MyHashTable<K,V> {
-    private HashNode<K,V>[] chainArray;
+    public class HashNode<K,V> {
+        private K key;
+        private V value;
+        private HashNode<K,V> next;
+        public HashNode(K key, V value) {
+            this.key = key;
+            this.value = value;
+        }
+        @Override
+        public String toString(){
+            return "{" + key + " " + value + "}";
+        }
+    }
+
+    public HashNode<K,V>[] chainArray;
     private int chain_number = 11;
     private int size = 0;
     public MyHashTable(){
@@ -13,7 +27,9 @@ public class MyHashTable<K,V> {
         return Math.abs(key.hashCode() % this.chain_number);
     }
 
-    public void put(K key, V value){}
+    public void put(K key, V value){
+
+    }
 
     public V get(K key){}
 
