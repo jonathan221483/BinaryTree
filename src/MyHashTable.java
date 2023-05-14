@@ -28,7 +28,18 @@ public class MyHashTable<K,V> {
     }
 
     public void put(K key, V value){
-
+        size ++;
+        int index = hash(key);
+        HashNode<K, V> data = new HashNode<>(key, value);
+        if(chainArray[index] == null){
+            chainArray[index] = data;
+            return;
+        }
+        HashNode<K, V> pointer = chainArray[index];
+        while (pointer.next != null){
+            pointer = pointer.next;
+        }
+        pointer.next = data;
     }
 
     public V get(K key){}
