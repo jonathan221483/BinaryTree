@@ -84,5 +84,14 @@ public class MyHashTable<K,V> {
         return false;
     }
 
-    public K getKey(V value){}
+    public K getKey(V value){
+        for (int index = 0; index < chain_number; index ++){
+            HashNode<K, V> pointer = chainArray[index];
+            while (pointer != null){
+                if (pointer.value.equals(value)) return pointer.key;
+                pointer = pointer.next;
+            }
+        }
+        return null;
+    }
 }
