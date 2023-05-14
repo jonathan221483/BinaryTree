@@ -42,9 +42,36 @@ public class MyHashTable<K,V> {
         pointer.next = data;
     }
 
-    public V get(K key){}
+    public V get(K key){
+        int index = hash(key);
+        HashNode<K, V> pointer = chainArray[index];
+        while (pointer != null && !pointer.key.equals(key)){
+            pointer = pointer.next;
+        }
+        if (pointer == null)
+            return null;
+        return pointer.value;
+    }
 
-    public V remove(K key){}
+    public V remove(K key){
+        size--;
+        int index = hash(key);
+        HashNode<K, V> pointer = chainArray[index];
+        HashNode<K, V> previous = null;
+        while (pointer != null && !pointer.key.equals(key)){
+            previous = pointer;
+            pointer = pointer.next;
+        }
+        if (pointer == null)
+            return null;
+        if (previous == null) {
+            chainArray[index] = pointer.next;
+        }
+        else{
+            previous.next = pointer.next;
+        }
+        return pointer.value;
+    }
 
     public boolean contains(V value){}
 
