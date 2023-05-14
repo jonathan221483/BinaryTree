@@ -13,4 +13,13 @@ public class MyHashTable<K,V> {
         return Math.abs(key.hashCode() % this.chain_number);
     }
 
+    public void put(K key, V value){}
+
+    public V get(K key){}
+
+    public V remove(K key){}
+
+    public boolean contains(V value){}
+
+    public K getKey(V value){}
 }
