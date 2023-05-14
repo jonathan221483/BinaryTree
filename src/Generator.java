@@ -13,9 +13,9 @@ public class Generator {
         return text.toString();
     }
     public int IDGen() {
-        return random.nextInt(1000, 9999);
+        return random.nextInt(1, 9999);
     }
     public float CostGen() {
-        return random.nextFloat() * 4;
+        return (random.nextFloat() * 3) + random.nextInt(1000, 5000);
     }
 }
