@@ -4,4 +4,5 @@ public class MyHashTable<K,V> {
     private int chain_number = 11;
     private int size;
     public MyHashTable(){}
+
 }
