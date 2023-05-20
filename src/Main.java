@@ -17,9 +17,9 @@ public class Main {
         System.out.println("Book " + hashTable.remove(harry) + " successfully removed from HashTable");
         System.out.println("Book with name Harry Potter exists? " + hashTable.contains("Harry Potter") + '\n');
 
-        System.out.println("Book with name Lord Of The Rings exists? " + hashTable.contains("Value to check"));
-        System.out.println("Book " + hashTable.remove(hashTable.getKey("Value to check")) + " successfully removed from HashTable");
-        System.out.println("Book with name Lord Of The Rings exists? " + hashTable.contains("Value to check"));
-
+        System.out.println("Lord Of The Rings has the value to check " + hashTable.contains("Value to check"));
+        System.out.println("Lord Of The Rings is the best book " + hashTable.contains("The best book"));
+        System.out.println("Lord Of The Rings is the " + hashTable.replace_key("Value to check","The best book"));
+        System.out.println("Lord Of The Rings is the best book " + hashTable.contains("The best book"));
     }
 }

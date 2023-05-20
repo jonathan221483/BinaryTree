@@ -108,4 +108,11 @@ public class MyHashTable<K,V> {
         return result;
     }
 
+    public V replace_key(V old_value, V new_value)
+    {
+        K key = getKey(old_value);
+        remove(key);
+        put(key,new_value);
+        return new_value;
+    }
 }
